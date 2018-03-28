@@ -1,0 +1,35 @@
+
+Clone/Downloading Project
+
+Using CMD or Terminal
+  git clone https://github.com/AaronChan42/ifb299-repository
+
+Or use Button on page
+  press "Clone or Download"
+
+## Not necessary but recommended according to StackOverflow
+Go to directory of clone or downloaded project THEN 
+
+Create virtualenv
+  virtualenv env --no-site-packages
+
+  source env/bin/activate
+
+Install dependencies (IF ANY)
+  pip install -r requirements.txt
+
+##
+
+CD to directory of clone or downloaded project
+
+Create SuperUser account
+  python manage.py createsuperuser
+
+Make migrations
+  python manage.py makemigrations
+
+Migrate
+  python manage.py migrate
+
+Run Server
+  python manage.py runserver
