@@ -2,7 +2,7 @@
 Clone/Downloading Project
 
 Using CMD or Terminal
-  git clone https://github.com/AaronChan42/ifb299-repository
+  git clone https://github.com/AaronChan42/ifb299-repository.git
 
 Or use Button on page
   press "Clone or Download"
