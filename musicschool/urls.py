@@ -18,5 +18,5 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
-    url(r'home/', include('home.urls')),
+    url(r'', include('home.urls')), #Changed to empty so whenever you runserver it will open home app
 ]

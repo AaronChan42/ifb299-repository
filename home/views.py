@@ -7,3 +7,15 @@ def index(request):
 
 def about(request):
     return render(request, 'home/about.html')
+
+def gallery(request):
+    return render(request, 'home/gallery.html')
+
+def jobs(request):
+    return render(request, 'home/jobs.html')
+
+def contact(request):
+    return render(request, 'home/contact.html')
+
+def team(request):
+    return render(request, 'home/team.html')

@@ -6,7 +6,11 @@ from . import views
 app_name = 'home'
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'), # /home/
-    url(r'about/', views.about, name = 'about'), # /home/about
+    url(r'^$', views.index, name='index'), #
+    url(r'about/', views.about, name = 'about'), # /about
+    url(r'gallery/', views.gallery, name = 'gallery'), #/gallery
+    url(r'jobs', views.jobs, name= 'jobs'), #/jobs
+    url(r'contact', views.contact, name= 'contact'), #/contact
+    url(r'ourteam', views.team, name = 'team'),
 ]
 
