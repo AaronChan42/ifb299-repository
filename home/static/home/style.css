@@ -1,7 +1,9 @@
 
-/* To remove whitespace between nav and items */
+/* To remove whitespace between nav and items margin-bottom: 0; */
 #nav {
-    margin-bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 html {
@@ -10,7 +12,8 @@ html {
 }
 
 body {
-  padding-bottom: 170px; /* Margin bottom by footer height - to not overlap with above content*/
+  padding-top: 60px;
+  padding-bottom: 300px; /* Margin bottom by footer height - to not overlap with above content 170*/
 }
 
 #foot {
