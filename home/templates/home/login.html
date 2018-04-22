@@ -19,7 +19,16 @@
             <button type="submit" class="btn btn-primary btn-lg">Login</button>
         </form>
     </div>
+
+    <div class="row">
+        <!-- Handle Invalid user-->
+    {% if invalid %}
+        Your email or password does not exist. Please try again.
+    {% endif %}
+    </div>
+
 </div>
+
 
 
 <!--JQUERY -->

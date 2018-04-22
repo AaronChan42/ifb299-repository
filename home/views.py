@@ -55,8 +55,8 @@ def login_user(request):
                 else: #If student... redirect to student homepage
                     login(request, user)
                     return redirect('/student')
-        #else:
-            # if User doesnt't exist do...
+        else:
+            return render(request, 'home/login.html', {'form': form, 'invalid': True})
 
     return render(request, 'home/login.html', {'form': form})
 

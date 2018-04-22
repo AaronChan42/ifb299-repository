@@ -18,7 +18,7 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
-    url(r'', include('home.urls')), #Changed to empty so whenever you runserver it will open home app
-    url(r'student/', include('student.urls')),
-    url(r'teacher/', include('teacher.urls')),
+    url(r'^', include('home.urls')), #Changed to empty so whenever you runserver it will open home app
+    url(r'^student/', include('student.urls')),
+    url(r'^teacher/', include('teacher.urls')),
 ]
