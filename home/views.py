@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms import PostMessage
+
 
 # Create your views here.
 def index(request):
@@ -15,7 +17,17 @@ def jobs(request):
     return render(request, 'home/jobs.html')
 
 def contact(request):
-    return render(request, 'home/contact.html')
+    form = PostMessage()
+
+    if request.method == "POST":
+        form = PostMessage(request.POST or None)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('home:contact')
+
+    return render(request, 'home/contact.html', {'form': form})
 
 def team(request):
     return render(request, 'home/team.html')
