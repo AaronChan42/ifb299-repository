@@ -1,8 +1,8 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from .forms import PostMessage, UserForm
-
+from django.core.exceptions import PermissionDenied
 
 # Create your views here.
 def index(request):
@@ -61,9 +61,11 @@ def login_user(request):
     return render(request, 'home/login.html', {'form': form})
 
 def logout_user(request):
+    if request.user.is_authenticated:
         logout(request)
         return render(request, 'home/logout.html')
-
+    else:
+        raise PermissionDenied
 
 # Student username: student
 # password = music123

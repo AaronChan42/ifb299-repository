@@ -37,7 +37,7 @@
 
             <ul class = "nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="{% url 'home:logout_user' %}">Log out</a>
+                        <a href="{% url 'home:logout_user' %}">Log out</a>
                 </li>
             </ul>
 
@@ -45,12 +45,10 @@
     </div>
 </nav>
 
-<!--This is to remove the whitespace between nav and following items -->
+    {% block body %}
+    {% endblock %}
 
-{% block body %}
-{% endblock %}
-
-<!-- Think about what you want to put into footer-->
+<!-- Footer -->
 <footer id = foot>
     <div class="container-fluid">
         <div class="row">
