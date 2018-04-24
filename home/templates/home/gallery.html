@@ -10,24 +10,69 @@
 <img src="{% static 'img/person-male.png' %}" height="200" width="200">
 
 <!-- Container to put in items-->
-<div class="container">
+<html>
+<head>
+<title>Photo Gallery </title>
 
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+<script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
+</script>
+
+</head>
+<body>
+
+<!-- gallery to place images in -->
+<center>
+<div class="gallery">
+	
     <div class="row">
-        <div class="col">
-            <h1><th><strong>Photo Gallery </strong></th></h1>
-            
-			<table>			
-				<tr>
-					<td> Click on the thumbnails to view a larger image</td>
-				</tr>
-			
-			
-			</table>
-			
-        </div>
+    <div class="col">
+	<table>
+		<tr>
+			<th  colspan="4"><strong><h1>Photo Gallery</h1></strong></th> <br>
+		</tr>
+		
+		<tr>
+			<td><a href="{% static 'img/image1.jpg' %}"><img src="{% static 'img/image1.jpg' %}" height="200" width="200"></a> </td>
+			<td><a href="{% static 'img/image2.jpg' %}"><img src="{% static 'img/image2.jpg' %}" height="200" width="200"></a> </td>
+			<td><a href="{% static 'img/image3.png' %}"><img src="{% static 'img/image3.png' %}" height="200" width="200"></a> </td>
+			<td><a href="{% static 'img/image8.png' %}"><img src="{% static 'img/image8.png' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image9.jpg' %}"><img src="{% static 'img/image9.jpg' %}" height="200" width="200"></a></td>		
+			<td><a href="{% static 'img/image10.jpg' %}"><img src="{% static 'img/image10.jpg' %}" height="200" width="200"></a></td>
+		</tr>
+		<tr>
+			<td><a href="{% static 'img/image14.jpg' %}"><img src="{% static 'img/image14.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image15.png' %}"><img src="{% static 'img/image15.png' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image16.jpg' %}"><img src="{% static 'img/image16.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image17.jpg' %}"><img src="{% static 'img/image17.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image18.jpg' %}"><img src="{% static 'img/image18.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image20.jpg' %}"><img src="{% static 'img/image20.jpg' %}" height="200" width="200"></a></td>
+		</tr>
+		<tr>
+			<td> <a href="{% static 'img/image4.jpg' %}"><img src="{% static 'img/image4.jpg' %}" height="200" width="200"></a></td>
+			<td> <a href="{% static 'img/image5.jpg' %}"><img src="{% static 'img/image5.jpg' %}" height="200" width="200"></a></td>
+			<td> <a href="{% static 'img/image6.jpg' %}"><img src="{% static 'img/image6.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image11.png' %}"><img src="{% static 'img/image11.png' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image12.png' %}"><img src="{% static 'img/image12.png' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image13.jpg' %}"><img src="{% static 'img/image13.jpg' %}" height="200" width="200"></a></td>
+		</tr>
+		
+		<tr>
+			<td><a href="{% static 'img/image14.jpg' %}"><img src="{% static 'img/image14.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image15.png' %}"><img src="{% static 'img/image15.png' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image16.jpg' %}"><img src="{% static 'img/image16.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image17.jpg' %}"><img src="{% static 'img/image17.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image18.jpg' %}"><img src="{% static 'img/image18.jpg' %}" height="200" width="200"></a></td>
+			<td><a href="{% static 'img/image19.jpg' %}"><img src="{% static 'img/image19.jpg' %}" height="200" width="200"></a></td>	
+		</tr>
+	</table>
     </div>
-
-
+    </div>
 </div>
+</center>
+
+</body>
+</html>
 
 {% endblock %}
