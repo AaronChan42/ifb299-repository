@@ -28,3 +28,49 @@ body {
 #ta {
     resize: none;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  margin-bottom: 12px;
+  padding: 0 12px;
+}
+
+.card {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 10px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.description{
+	margin:center;
+	width: 90%;
+	padding: 0 12px;
+}
+
+.gallery img{
+    width: 250px;
+	padding: 5px;
+	filter: grayscale(100%);
+	transition: ls;
+}
+
+.gallery img:hover{
+	filter: grayscale(0);	
+	transform: scale(1.1);
+}
