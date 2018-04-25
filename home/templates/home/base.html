@@ -55,8 +55,12 @@
 
             <!--Login Button (RHS) -->
             <ul class = "nav navbar-nav navbar-right">
-                <li class = ""> <!-- Add if statement to go to logout page -->
-                    <a href="{% url 'home:login' %}"> Login </a>
+                <li class = ""> <!-- If they go to homepage, while logged in do... -->
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'home:logout_user' %}"> Log out </a>
+                    {% else %}
+                        <a href="{% url 'home:login' %}"> Login </a>
+                    {% endif %}
                 </li>
             </ul>
 
