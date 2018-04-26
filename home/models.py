@@ -122,3 +122,13 @@ class ParentPhone (models.Model):
 
     def __str__(self):
         return self.parent + ' - ' + self.phoneNumber
+
+class Message (models.Model):
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    email = models.EmailField(max_length=75)
+    phoneNumber = models.CharField(max_length=10)
+    messageContent =  models.TextField()
+
+    def __str__(self):
+        return self.firstName + ' ' + self.lastName + ' - ' + self.messageContent

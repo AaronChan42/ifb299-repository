@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+{% load staticfiles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'home/style.css' %}" /> <!--This app will use same CSS from 'home' static style.css file-->
+<!-- Nav Bar -->
+<nav class="navbar navbar-default" id="nav">
+
+    <div class = "container-fluid">
+
+        <!--Logo-->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Music School</a>
+        </div>
+
+        <!-- Nav Items -->
+        <div class = "collapse navbar-collapse">
+
+            <!--About Item -->
+            <ul class = "nav navbar-nav">
+                <li class = "">
+                    <a href="#"> Item 1 </a>
+                </li>
+            </ul>
+
+            <!--Another Item -->
+            <ul class = "nav navbar-nav">
+                <li class = "">
+                    <a href="{% url 'admin:index' %}"> Admin </a>
+                </li>
+            </ul>
+
+            <ul class = "nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="{% url 'home:logout_user' %}">Log out</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<!--This is to remove the whitespace between nav and following items -->
+
+{% block body %}
+{% endblock %}
+
+<!-- Think about what you want to put into footer-->
+<footer id = foot>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-2">
+
+            </div>
+
+            <div class="col-sm-2">
+                <h4>Contact Us</h4>
+                <p>Music School
+                <br>1 George St
+                <br>Brisbane City QLD 4000
+                <br>(07) 1234 5678</p>
+                <h6>Copyright &copy; 2018</h6>
+            </div>
+
+            <div class="col-sm-2">
+                <h4>About Us</h4>
+                <p>Music is our passion. We believe x, y, z.
+                <br> Founded in 2000</p>
+            </div>
+
+            <div class="col-sm-2">
+                <h4>Navigation</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home:about' %}">About</a></li>
+                    <li><a href="{% url 'home:gallery' %}">Gallery</a></li>
+                    <li><a href="{% url 'home:jobs' %}">Jobs</a></li>
+                    <li><a href="{% url 'home:team' %}">Our Team</a></li>
+                    <li><a href="{% url 'home:contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-2">
+                <h4>Follow Us</h4>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+            </div>
+
+            </div>
+
+    </div>
+</footer>
+
+<!--JQUERY -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>
