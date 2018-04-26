@@ -28,13 +28,14 @@ body {
 #ta {
     resize: none;
 }
+
 *, *:before, *:after {
-  box-sizing: inherit; /* Can we remove this seems to be messing up nav and footer across all pages???*/
+  box-sizing: inherit;
 }
 
 .column {
   float: left;
-  width: 15%;
+  width: 20%;
   margin-bottom: 12px;
   padding: 0 12px;
 }
@@ -44,7 +45,7 @@ body {
 }
 
 .container {
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .container::after, .row::after {
@@ -56,15 +57,19 @@ body {
 .title {
   color: grey;
 }
+	
+.email {
+	color: forestgreen;
+}
 
 .description{
 	margin:center;
-	width: 90%;
+	width: 100%;
 	padding: 0 12px;
 }
 
 .gallery img{
-    width: 250px;
+    	width: 250px;
 	padding: 5px;
 	filter: grayscale(100%);
 	transition: ls;
@@ -74,7 +79,6 @@ body {
 	filter: grayscale(0);	
 	transform: scale(1.1);
 }
-
 #loginPG {
     background-color: #f5f5f5;
 }
