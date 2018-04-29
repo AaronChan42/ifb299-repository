@@ -5,7 +5,6 @@ from .models import *
 admin.site.register(Teacher)
 admin.site.register(Student)
 admin.site.register(Lesson)
-admin.site.register(Instrument)
 admin.site.register(TeacherQualification)
 admin.site.register(TeacherInstrument)
 admin.site.register(TeacherLanguage)

@@ -1,0 +1,52 @@
+
+
+{% extends 'home/base.html' %}
+{% block title %}Enrol{% endblock %}
+
+{% block body %}
+
+
+{% load staticfiles %} <!--To use static path -->
+
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h3>Enrolment prerequisites</h3>
+            <hr>
+            <p>To enrol your child at Pinelands, you will need to provide evidence of you <strong>and</strong> your child's identity <strong>and</strong> proof of residence to ensure you reside within the school's catchment area.
+                <br>
+                <br>To verify your identity and residence, you can use your driver's license or Australian passport. For your child, please provide a copy of his/her
+                birth certificate.
+            <br>
+            </p>
+            <br> To enrol, please print and complete the provided <a href="{% static 'home/studentC.pdf' %}">PDF form.</a> </p>
+
+            <h3>Enrolment submission</h3>
+            <hr>
+            <p> Enrolment forms must be submitted in-person or by post.
+            <br>
+            <br>Once your enrolment has been submitted, Pinelands will contact you to complete the enrolment process.
+            <br>
+            <br><strong>*Enrolment fees apply.</strong>
+            </p>
+
+            <h3>Eligibility for enrolment</h3>
+            <hr>
+            <p>You are eligible to enrol if:</p>
+            <ul>
+                <li>are an Australian citizen,</li>
+                <li>have lived in your current address for at least one month and,</li>
+                <li>your child is aged 10 years and over.</li>
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

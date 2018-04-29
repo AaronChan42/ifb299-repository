@@ -1,0 +1,57 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}My Music{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1>My Music</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <!-- Header -->
+                <thead>
+                    <tr>
+                      <th scope="col">Song</th>
+                      <th scope="col">File name</th>
+                      <th scope="col">Download</th>
+                    </tr>
+                </thead>
+
+                <!-- Body -->
+                <tbody>
+                    {% for song in all_songs %}
+                    <tr>
+                        <td>{{ song.song_title }}</td>
+                        <td>{{ song.song_file }}</td>
+                        <td><a href="{{ song.song_file.url }}">Link</a></td>
+                        <td>
+                            <!-- To delete songs -->
+                            <form action=""></form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--
+    {% for song in all_songs %}
+        <li><a target="_blank" href="{{ song.song_file.url }}">{{song.song_title}}</a> </li>
+    {% endfor %} -->
+
+
+
+
+{% endblock %}

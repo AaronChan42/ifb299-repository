@@ -3,40 +3,84 @@
 {% block title %}Homepage{% endblock %}
 
 {% block body %}
-<!--Jumbotron Message -->
-<div class= "jumbotron">
-    <div class = "container-fluid">
-        <h1>Welcome!</h1>
-        <p>This is a music school</p>
-        <p><a class = "btn btn-primary btn-lg" href="#" id="learn" role = "button">Learn More</a></p> <!--Should replace link to About Page -->
+{% load staticfiles %}
+
+<div class="container-fluid">
+    <div class="row">
+
+
+            <div id="slider" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/piano.jpg' %}" alt="Image" class="img-responsive"/> <!-- YOU MUST FIND 3 images with same size otherwise won't work-->
+                        <div class="carousel-caption">
+                            <h1>Welcome</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls --->
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="our_school">
+    <div class="row">
+        <div class="text-center">
+            <h3 style="font-family:Times;">Our School</h3>
+            <p> At Pinelands, we take the time to find out what you would like to achieve from the music lessons, helping you to establish your goals and coach you towards achieving them.
+            <br>Our music teachers are all highly skilled and will help you realise your music potential through the lessons.
+            <br>Learn more about us <a href="{% url 'home:about' %}">here.</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- 3 images here-->
+    </div>
+</div>
+
+<div class="container-fluid" id="quote">
+    <div class="row">
+        <div class="text-center">
+            <p style="font-family:Times;">
+            "At Pineland's Music School we believe that music lessons are not just about learning to sing or to play an instrument."
+            <br> <strong>Mika</strong>
+            <br> Founder, Pinelands Music School
+            </p>
+        </div>
     </div>
 </div>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+<div class="container-fluid" id="lessons">
+    <div class="row">
+        <div class="text-center">
+            <h3 style="font-family:Times;">Lessons</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br>
+				et dolore magna aliqua. Ut enim ad minim veniam</p>
+        </div>
     </div>
-  </div>
+
+    <div class="row" id="lesson_area">
+        <!-- 3 cards of different lessons-->
+    </div>
 </div>
+
+<div class="container-fluid" id="teaching">
+    <div class="row">
+        <div class="text-center">
+            <h3 style="font-family:Times;">Our Teaching Team</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br>
+				et dolore magna aliqua. Ut enim ad minim veniam</p>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}

@@ -1,0 +1,30 @@
+
+{% extends 'student/base.html' %}
+
+{% block title %}Instrument{% endblock %}
+
+{% block body %}
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#requestModal">
+  Launch demo modal
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>Your instrument hire/purchase request has been sent.</h4> <!-- If form.is_valid (i.e. filled out)-->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

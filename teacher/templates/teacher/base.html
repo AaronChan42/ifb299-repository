@@ -15,7 +15,7 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Music School</a>
+            <a class="navbar-brand" href="{% url 'teacher:index' %}">Music School</a>
         </div>
 
         <!-- Nav Items -->
@@ -24,7 +24,7 @@
             <!--About Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="#"> Item 1 </a>
+                    <a href="{% url 'teacher:manage_music' %}"> Manage Music </a>
                 </li>
             </ul>
 
@@ -40,6 +40,7 @@
                     <a href="{% url 'home:logout_user' %}">Log out</a>
                 </li>
             </ul>
+
 
         </div>
     </div>

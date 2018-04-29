@@ -3,6 +3,7 @@ from django.contrib.auth.views import logout
 from django.shortcuts import render, redirect
 from .forms import PostMessage, UserForm
 from django.core.exceptions import PermissionDenied
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -17,6 +18,9 @@ def gallery(request):
 def jobs(request):
     return render(request, 'home/jobs.html')
 
+def enrol(request):
+    return render(request, 'home/enrol.html')
+
 def contact(request):
     form = PostMessage()
 
@@ -26,6 +30,7 @@ def contact(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
+            messages.success(request, 'Your Message has been Sent!')
             return redirect('home:contact')
 
     return render(request, 'home/contact.html', {'form': form})
@@ -46,7 +51,7 @@ def login_user(request):
             if user.is_active: # Check if active
                 if user.is_staff and not user.is_superuser: #If staff member... redirect to teacher homepage
                     login(request, user)
-                    return redirect('/teacher') #will need to update if we want to make it for multiple users
+                    return redirect('/teacher')
 
                 elif user.is_superuser: #If admin... redirect to admin page
                     login(request, user)

@@ -1,0 +1,20 @@
+{% extends 'teacher/base.html' %}
+
+{% block title %}Add Music{% endblock %}
+
+{% block body %}
+<h1>Manage Music</h1>
+
+<form method = post class="post-message" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-lg">Add Song</button>
+</form>
+
+<!-- Send verification it has been uploaded -->
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
+
+{% endblock %}

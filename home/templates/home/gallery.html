@@ -5,14 +5,8 @@
 
 {% load staticfiles %} <!--To use static images -->
 
-<h1>Gallery is here</h1>
 
-<img src="{% static 'img/person-male.png' %}" height="200" width="200">
-
-<!-- Container to put in items-->
-<html>
 <head>
-<title>Photo Gallery </title>
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
@@ -25,13 +19,16 @@
 <!-- gallery to place images in -->
 <center>
 <div class="gallery">
-	
+
+	<div class="row">
+		<div class="text-center">
+			<h1>Photo Gallery</h1>
+		</div>
+	</div>
+
     <div class="row">
     <div class="col">
 	<table>
-		<tr>
-			<th  colspan="4"><strong><h1>Photo Gallery</h1></strong></th> <br>
-		</tr>
 		
 		<tr>
 			<td><a href="{% static 'img/image1.jpg' %}"><img src="{% static 'img/image1.jpg' %}" height="200" width="200"></a> </td>
@@ -73,6 +70,6 @@
 </center>
 
 </body>
-</html>
+
 
 {% endblock %}

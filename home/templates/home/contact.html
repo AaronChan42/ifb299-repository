@@ -40,8 +40,16 @@
                     <form method = post class="post-message">
                         {% csrf_token %}
                         {{ form.as_p }}
+
+                         <!-- Send verification it has been sent -->
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+
                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                     </form>
+
+
 
         </div>
 

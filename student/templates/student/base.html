@@ -15,7 +15,7 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Music School</a>
+            <a class="navbar-brand" href="{% url 'student:index' %}">Music School</a>
         </div>
 
         <!-- Nav Items -->
@@ -24,16 +24,31 @@
             <!--About Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="#"> Item 1 </a>
+                    <a href="{% url 'student:feedback' %}"> Feedback </a>
                 </li>
             </ul>
 
             <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="#"> Item 2 </a>
+                    <a href="{% url 'student:instrument' %}"> Instruments </a>
                 </li>
             </ul>
+
+            <!--Another Item -->
+            <ul class = "nav navbar-nav">
+                <li class = "">
+                    <a href="{% url 'student:my_music' %}"> My Music </a>
+                </li>
+            </ul>
+
+             <!--Another Item -->
+            <ul class = "nav navbar-nav">
+                <li class = "">
+                    <a href="{% url 'student:booking' %}"> Book Lessons </a>
+                </li>
+            </ul>
+
 
             <ul class = "nav navbar-nav navbar-right">
                 <li class="">

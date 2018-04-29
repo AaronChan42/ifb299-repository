@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include, url
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
@@ -22,3 +24,9 @@ urlpatterns = [
     url(r'^student/', include('student.urls')),
     url(r'^teacher/', include('teacher.urls')),
 ]
+
+
+#For uploading music files
+if settings.DEBUG: #if in development mode, use these root directories
+    urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

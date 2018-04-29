@@ -9,13 +9,12 @@ class Teacher(models.Model):
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDERS)
-    studentFeedback = models.TextField()
     email = models.EmailField(max_length=75)
     DoB = models.DateField()
     facebookID = models.IntegerField()
 
     def __str__(self): # Displays firstName + lastName
-        return self.id + ' - ' + self.firstName + ' - ' + self.lastName
+        return self.firstName + ' - ' + self.lastName
 
 class Student(models.Model):
     GENDERS = (
@@ -32,7 +31,7 @@ class Student(models.Model):
 
 
     def __str__(self): # Displays firstName + lastName
-        return self.id + ' - ' + self.firstName + ' - ' + self.lastName
+        return self.firstName + ' - ' + self.lastName
 
 
 class Lesson(models.Model):
@@ -51,26 +50,7 @@ class Lesson(models.Model):
     students = models.ManyToManyField(Student)# students can have many lessons vice versa
 
     def __str__(self): # Displays firstName + lastName
-        return self.id + ' - ' + self.teacher
-
-class Instrument(models.Model):
-    CONDITIONS = (
-        ('N', 'New'),
-        ('E', 'Excellent'),
-        ('G', 'Good'),
-        ('R', 'Repair'),
-        ('D', 'Discard')
-    )
-
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    type = models.CharField(max_length=50)  #+ add NULL as well
-    costofHire = models.IntegerField()
-    purchaseCost = models.IntegerField()
-    condition = models.CharField(max_length=1, choices=CONDITIONS)
-
-    def __str__(self): #Displays instrument ID + type + condition
-        return self.id + ' - ' + self.type + ' - ' + self.condition
-
+        return self.startDate + ' - ' + self.teacher
 
 class Parent (models.Model):
     firstName = models.CharField(max_length=30)

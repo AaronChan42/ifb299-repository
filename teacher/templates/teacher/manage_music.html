@@ -1,0 +1,56 @@
+{% extends 'teacher/base.html' %}
+{% block title %}Manage Music{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1>My Music</h1>
+                <a class="btn btn-default" href="{% url 'teacher:add_music' %}">Add Song</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <!-- Header -->
+                <thead>
+                    <tr>
+                      <th scope="col">Song</th>
+                      <th scope="col">File name</th>
+                      <th scope="col">Download</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <!-- Body -->
+                <tbody>
+                    {% for song in all_songs %}
+                    <tr>
+                        <td>{{ song.song_title }}</td>
+                        <td>{{ song.song_file }}</td>
+                        <td><a href="{{ song.song_file.url }}">Link</a></td>
+                        <td>
+                            <!-- To delete songs -->
+                            <form action="{% url 'teacher:delete_music' song.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="song_id" value="{{ song.id }}">
+                                <button type="submit" class="btn btn danger btn-xs">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
