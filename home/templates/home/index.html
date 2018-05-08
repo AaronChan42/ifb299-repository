@@ -4,26 +4,46 @@
 
 {% block body %}
 {% load staticfiles %}
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 <div class="container-fluid">
     <div class="row">
 
 
-            <div id="slider" class="carousel slide" data-ride="carousel">
+            <div id="my_slider" class="wow fadeInRight carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
+                    <div class="item active">
                         <img src="{% static 'img/piano.jpg' %}" alt="Image" class="img-responsive"/> <!-- YOU MUST FIND 3 images with same size otherwise won't work-->
                         <div class="carousel-caption">
-                            <h1>Welcome</h1>
+                            <h1>Welcome to Pinelands!</h1>
+                            <a class="btn btn-primary btn-lg" href="#our_school">Learn More</a>
                         </div>
                     </div>
+
+                    <div class="item">
+                        <img src="{% static 'img/guitar.jpg' %}" alt="Image_2" class="img-responsive"/>
+                    </div>
+
+                    <div class="item">
+                        <img src="{% static 'img/drums.jpg' %}" alt="Image_3" class="img-responsive"/>
+                    </div>
+
                 </div>
 
                 <!-- Controls --->
+                <a class="left carousel-control" href="#my_slider" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="right carousel-control" href="#my_slider" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
 
         </div>
     </div>
@@ -31,8 +51,8 @@
 
 <div class="container-fluid" id="our_school">
     <div class="row">
-        <div class="text-center">
-            <h3 style="font-family:Times;">Our School</h3>
+        <div class="wow fadeInUp text-center">
+            <h3 style="font-family:'Roboto', sans-serif;">Our School</h3>
             <p> At Pinelands, we take the time to find out what you would like to achieve from the music lessons, helping you to establish your goals and coach you towards achieving them.
             <br>Our music teachers are all highly skilled and will help you realise your music potential through the lessons.
             <br>Learn more about us <a href="{% url 'home:about' %}">here.</a>
@@ -47,8 +67,8 @@
 
 <div class="container-fluid" id="quote">
     <div class="row">
-        <div class="text-center">
-            <p style="font-family:Times;">
+        <div class="wow fadeInUp text-center">
+            <p style="font-family:'Roboto', sans-serif;">
             "At Pineland's Music School we believe that music lessons are not just about learning to sing or to play an instrument."
             <br> <strong>Mika</strong>
             <br> Founder, Pinelands Music School
@@ -60,8 +80,8 @@
 
 <div class="container-fluid" id="lessons">
     <div class="row">
-        <div class="text-center">
-            <h3 style="font-family:Times;">Lessons</h3>
+        <div class="wow fadeInUp text-center">
+            <h3 style="font-family:'Roboto', sans-serif;">Lessons</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br>
 				et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
@@ -74,8 +94,8 @@
 
 <div class="container-fluid" id="teaching">
     <div class="row">
-        <div class="text-center">
-            <h3 style="font-family:Times;">Our Teaching Team</h3>
+        <div class="wow fadeInUp text-center">
+            <h3 style="font-family:'Roboto', sans-serif;">Our Teaching Team</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br>
 				et dolore magna aliqua. Ut enim ad minim veniam</p>
         </div>
@@ -83,4 +103,8 @@
 </div>
 
 
+<script src="{% static 'js/wow.min.js' %}"></script>
+              <script>
+              new WOW().init();
+              </script>
 {% endblock %}
