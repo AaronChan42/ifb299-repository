@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout
 from django.shortcuts import render, redirect
-from .forms import PostMessage, UserForm
+from .forms import PostMessage, UserForm, JobForm
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
 
@@ -16,7 +16,18 @@ def gallery(request):
     return render(request, 'home/gallery.html')
 
 def jobs(request):
-    return render(request, 'home/jobs.html')
+    form = JobForm()
+
+    if request.method == "POST":
+        form = JobForm(request.POST or None, request.FILES or None)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            messages.success(request, 'Your job application has been sent!')
+            return redirect('home:jobs')
+
+    return render(request, 'home/jobs.html', {'form': form})
 
 def enrol(request):
     return render(request, 'home/enrol.html')

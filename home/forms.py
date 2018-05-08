@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Message
+from .models import Message, Applicant
 from django.contrib.auth.models import User
 
 class PostMessage(forms.ModelForm):
@@ -54,3 +54,41 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'password')
+
+class JobForm(forms.ModelForm):
+
+    firstName = forms.CharField(label= "First Name", widget=forms.TextInput(
+      attrs={
+          'class': 'form-control'
+      }
+    ))
+
+    lastName = forms.CharField(label='Surname', widget=forms.TextInput(
+        attrs={
+            'class': 'form-control'
+        }
+    ))
+
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(
+        attrs={
+            'class': 'form-control'
+        }
+    ))
+    phoneNumber = forms.CharField(label="Phone Number", widget=forms.TextInput(
+        attrs={
+            'class': 'form-control'
+        }
+    ))
+
+    contract = forms.FileField(label="Signed Contract", widget=forms.FileInput(attrs={
+        'class': 'form-control-file'
+    }))
+
+    resume = forms.FileField(label="Resume/CV", widget=forms.FileInput(attrs={
+        'class': 'form-control-file'
+    }))
+
+    class Meta:
+        model = Applicant
+        fields = ('firstName', 'lastName', 'email', 'phoneNumber', 'contract', 'resume')
+

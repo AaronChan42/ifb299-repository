@@ -29,8 +29,9 @@ def add_music(request):
 def delete_music(request, song_id):
     song = Song.objects.get(pk=song_id)
     song.delete()
-    return render(request, 'teacher/manage_music.html', {"song": song}) #NEED TO ADD PART TO REFRESH TABLE AFTER DELETING
+    return render(request, 'teacher/manage_music.html', {"song": song})
 
+#NEED TO ADD PART TO REFRESH TABLE AFTER DELETING
 
 class DisplayMusic(ListView):
     #To display songs in a table
@@ -40,3 +41,8 @@ class DisplayMusic(ListView):
     def get_queryset(self):
         return Song.objects.all()
 
+def timetable(request):
+    return render(request, 'teacher/timetable.html')
+
+def manage_lessons(request):
+    return render(request, 'teacher/manage_lessons.html')

@@ -112,3 +112,14 @@ class Message (models.Model):
 
     def __str__(self):
         return self.firstName + ' ' + self.lastName + ' - ' + self.messageContent
+
+class Applicant (models.Model):
+    firstName = models.CharField(max_length=30)
+    lastName = models.CharField(max_length=30)
+    email = models.EmailField(max_length=75)
+    phoneNumber = models.CharField(max_length=10)
+    contract = models.FileField(default='')
+    resume = models.FileField(default='')
+
+    def __str__(self):
+        return self.firstName + ' ' + self.lastName
