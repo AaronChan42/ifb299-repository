@@ -5,6 +5,7 @@ from .models import Song
 from django.contrib import messages
 from django.views.generic import ListView
 
+
 # Create your views here.
 def index(request):
     if request.user.is_authenticated and request.user.is_staff:

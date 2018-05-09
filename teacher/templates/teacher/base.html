@@ -8,10 +8,15 @@
 {% load staticfiles %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="{% static 'home/style.css' %}" /> <!--This app will use same CSS from 'home' static style.css file-->
+
 <!--JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Animate CSS-->
+<link rel="stylesheet" href="{% static 'home/animate.css' %}">
+<script src="{% static 'js/wow.min.js' %}"></script>
 
 <!-- Nav Bar -->
 <nav class="navbar navbar-default" id="nav">
@@ -69,7 +74,7 @@
 {% endblock %}
 
 <!-- Think about what you want to put into footer-->
-<footer id = foot>
+<footer id = foot class="wow fadeInUp">
     <div class="container-fluid">
         <div class="row">
 
@@ -100,6 +105,7 @@
                     <li><a href="{% url 'home:jobs' %}">Jobs</a></li>
                     <li><a href="{% url 'home:team' %}">Our Team</a></li>
                     <li><a href="{% url 'home:contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'teacher:index' %}">Teacher Home</a></li>
                 </ul>
             </div>
 
@@ -114,6 +120,10 @@
     </div>
 </footer>
 
+<script src="{% static 'js/wow.min.js' %}"></script>
+              <script>
+              new WOW().init();
+              </script>
 
 
 </html>

@@ -21,7 +21,7 @@
 <script src="{% static 'js/wow.min.js' %}"></script>
 
 <!-- Nav Bar -->
-<nav class="navbar navbar-default" id="nav">
+<nav class="navbar navbar-default wow fadeInDown" id="nav">
 
     <div class = "container-fluid">
 
@@ -124,6 +124,17 @@
                     <li><a href="{% url 'home:jobs' %}">Jobs</a></li>
                     <li><a href="{% url 'home:team' %}">Our Team</a></li>
                     <li><a href="{% url 'home:contact' %}">Contact Us</a></li>
+
+                    {% if user.is_authenticated %}
+
+                        {% if user.is_staff %}
+                        <li><a href="{% url 'teacher:index' %}">Teacher Home</a></li>
+                        {% else %}
+                        <li><a href="{% url 'student:index' %}">Student Home</a></li>
+                        {% endif %}
+
+                    {% endif %}
+
                 </ul>
             </div>
 

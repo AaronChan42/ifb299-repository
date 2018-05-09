@@ -2,6 +2,11 @@
 from django import forms
 from .models import Message, Applicant
 from django.contrib.auth.models import User
+from django.core.validators import RegexValidator
+
+#Phone Number Validator
+phone_val = RegexValidator(regex=r'^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$'
+                           , message="Phone number must be entered in format: '0491570110'")
 
 class PostMessage(forms.ModelForm):
     firstName = forms.CharField(label = "First Name", widget = forms.TextInput(
@@ -21,7 +26,7 @@ class PostMessage(forms.ModelForm):
             'class' : 'form-control'
         }
     ))
-    phoneNumber = forms.CharField(label= "Phone Number",  widget= forms.TextInput(
+    phoneNumber = forms.CharField(label= "Phone Number", validators=[phone_val],widget= forms.TextInput(
         attrs={
             'class' : 'form-control'
         }

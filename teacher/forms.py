@@ -1,5 +1,7 @@
 from django import forms
 from .models import Song
+from django.core.validators import FileExtensionValidator
+
 
 class SongForm(forms.ModelForm):
     song_title = forms.CharField(label = "Song Title", widget = forms.TextInput(attrs={
@@ -7,7 +9,8 @@ class SongForm(forms.ModelForm):
     }
     ))
 
-    song_file = forms.FileField(label = "Song File", widget= forms.FileInput(attrs={
+    song_file = forms.FileField(label = "Song File", validators=[FileExtensionValidator(['mp3', 'ogg', 'wav'])],
+        widget= forms.FileInput(attrs={
         'class': 'form-control-file'
     }))
 
