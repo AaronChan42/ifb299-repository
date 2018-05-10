@@ -62,12 +62,6 @@ body {
 	color: forestgreen;
 }
 
-.description{
-	margin:center;
-	width: 100%;
-	padding: 0 12px;
-}
-
 .gallery img{
     width: 250px;
 	padding: 5px;
@@ -87,23 +81,41 @@ body {
 
 #our_school {
     background-color: #f5f5f5;
-    padding: 60px
+    padding: 60px;
 }
 
 #lessons {
     background-color: #f5f5f5;
-    padding: 60px
+    padding: 60px;
 }
 
 #teaching {
-    padding: 60px
+    padding: 60px;
 }
 
 #quote {
-    padding: 60px
+    padding: 60px;
 }
 
 .carousel-caption {
     top:40%;
     bottom: auto;
+}
+
+#value {
+    padding: 60px;
+}
+
+
+#deserve {
+    padding: 60px;
+}
+
+
+#job_intro {
+    padding: 20px;
+}
+
+#opp_body {
+    padding: 20px;
 }

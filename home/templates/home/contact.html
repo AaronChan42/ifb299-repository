@@ -3,14 +3,16 @@
 
 {% block body %}
 
-<div class="container-fluid">
+{% load staticfiles %}
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<div class="container-fluid wow fadeIn">
 
     <div class="row">
 
-        <div class="col-md-2"></div>
-
-        <div class="col-md-4">
-        <h3><strong>Contact Us</strong></h3>
+        <div class="col-md-4 col-md-offset-2">
+        <h1 style="font-size: 80px;">Contact Us</h1>
+        <hr>
 
         <!-- Google Map -->
         <div class="embed-responsive embed-responsive-4by3">
@@ -20,22 +22,22 @@
         </div>
 
         <div class="col-md-4">
-                <h3><strong>Get in touch</strong></h3>
-                <p>We are here to answer any questions or queries you may have about our music school.</p>
+                <h2><strong>Get in touch</strong></h2>
+                <h4 style="font-family: 'Roboto', sans-serif;">We are here to answer any questions or queries you may have about our music school.</h4>
 
                 <!--Add CSS and columns-->
-                <p><strong>Location</strong>
+                <h4 style="font-family: 'Roboto', sans-serif;"><strong>Location</strong>
                 <br>Music School
                 <br>1 George St
-                <br>Brisbane City QLD 4000</p>
+                <br>Brisbane City QLD 4000</h4>
 
 
-                <p><strong>Phone</strong>
-                <br>(07) 1234 5678</p>
+                <h4 style="font-family: 'Roboto', sans-serif;"><strong>Phone</strong>
+                <br>(07) 1234 5678</h4>
 
-                <p><strong>Email</strong>
+                <h4 style="font-family: 'Roboto', sans-serif;"><strong>Email</strong>
                 <br>mika@musicschool.com
-                <br>Alternatively, please feel free to submit your message below.</p>
+                <br><br>Alternatively, please feel free to submit your message below.</h4>
 
                     <form method = post class="post-message">
                         {% csrf_token %}

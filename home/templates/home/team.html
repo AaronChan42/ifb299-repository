@@ -4,192 +4,168 @@
 {% block body %}
 
 {% load staticfiles %} <!--To use static images -->
+<link rel="stylesheet" href="{% static 'home/lightbox.css' %}">
+<script src="{% static 'js/lightbox.min.js' %}"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<!Doctype html>
 <html lang="en">
 <head>
-<title>Pinelands Music School's Teachers </title>
-
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
-<script type="text/javascript" src="js/lightbox-plus-jquery.min.js">
-</script>
-
+<title>Our Team</title>
 </head>
-<body>
+<div>
 
 <!-- Team Intro -->
-	<div class="description">
-	<div class="card">
-	<Center>
-		<h2><strong>Welcome, Meet Our Team!</strong></h2>
-		<p>At Lizie, we pride ourselves on our faculty's depth of study and professional experience.
-		Our teachers have all studied music at a tertiary level with many <br>achieving post graduate qualifications. 
-		Faculty members regularly perform at professional engagements and several have competed in 
-		competitions at a national and international level.</p>
-		<br></center>
+	<div class="container-fluid wow fadeIn">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-2">
+				<h1 style="font-size: 80px;">Meet Our Team</h1>
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="text-center">
+					<br><br>
+					<h3 style="font-family: 'Open Sans', sans-serif;">At Pinelands, the talented team are committed to educating and
+						working together to create opportunities that can change lives.</h3>
+					<br><br>
+					<hr>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	</div>
 	</div>
 
 	
-<!-- First column of four (4) photos -->
-<div class="ourteam">
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team1.jpg' %}"><img src="{% static 'img/team1.jpg' %}" height="200" width="200"></a>
-	
-			<h2>Mike Ross</h2>
-			<p class="title">Chief Executive Officer</p>
-			 <p class="email">mikerose@pinelands.edu.au</p>
-			<p>Jenny has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-		</div>
-    </div>
-	</div>
-		 
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team8.jpg' %}"><img src="{% static 'img/team8.jpg' %}" height="200" width="200"></a>
-	  
-			<h2>Jenniffer Kevin</h2>
-			<p class="title">Chieft Accountant</p>
-			 <p class="email">jenkevin@pinelands.edu.au</p>
-			<p>Jenny has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-		</div>
-    </div>
-	</div>
-	
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team3.jpg' %}"><img src="{% static 'img/team3.jpg' %}" height="200" width="200"></a>
-	 
-			<h2>Adam Adam</h2>
-			<p class="title">Administrator</p>
-			 <p class="email">adamadam@pinelands.edu.au</p>
-			<p>Jenny has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-     
-		</div>
-	</div>
-	</div>
+<!-- TOP -->
+<div class="container-fluid" style="padding: 60px;">
+	<div class="col-md-4 col-md-offset-1" style="width: 16%;">
 
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team4.jpg' %}"><img src="{% static 'img/team4.jpg' %}" height="200" width="200"></a>
-	 
-			<h2>Rose Owen</h2>
-			<p class="title">Chief Finance Officer</p>
-			 <p class="email">mik@pinelands.edu.au</p>
-			<p>Rose has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+		<div class="container-fluid">
+		  <a href="{% static 'img/team1.jpg' %}" data-lightbox="image-2"><img src="{% static 'img/team1.jpg' %}" height="300" width="300"></a>
 		</div>
-	</div>
-	</div>
-	
-	<div class="column">
-    <div class="card">
-		<div class="container">
-		<a href="{% static 'img/team5.jpg' %}"><img src="{% static 'img/team5.jpg' %}" height="200" width="200"></a>
-	  
-			<h2>Rachel Dean</h2>
-			<p class="title">Piano</p>
-			 <p class="email">racheldean@pineland.edu.au</p>
-			<p>Rachel has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-		</div>
-	</div>
-	</div>
-</div> <br>
+  	</div>
 
-	<!-- Second column of four (4) photos -->
-<div class="ourteam">
-	
-	<div class="column">
-    <div class="card">
-		<div class="container">
-		  <a href="{% static 'img/team9.jpg' %}"><img src="{% static 'img/team9.jpg' %}" height="200" width="200"></a>
-	 
-			<h2>Huge Moa</h2>
+	<div class="col-md-2">
+		<div class="container-fluid">
+			<h2>Bryan</h2>
 			<p class="title">Guitar</p>
-			 <p class="email">hugemoa@pinelands.edu.au</p>
-			<p>Huge has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+			 <p class="email">bryan@pinelands.edu.au</p>
+			<p>Bryan has been working at Virtuosi since early 2017 <br>as a receptionist.
+			He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p> <br>
 		</div>
-	</div>
 	</div>
 
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team6.jpg' %}"><img src="{% static 'img/team6.jpg' %}" height="200" width="200"></a>
-	 
-			<h2>Eliza Peter</h2>
-			<p class="title">Dancer</p>
-			 <p class="email">Elizapeter@pinelands.edu.au</p>
-			<p>Eliza has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-     
-		</div>
-	</div>
-	</div>
 
-	<div class="column">
-    <div class="card">
-      <div class="container">
-		  <a href="{% static 'img/team7.jpg' %}"><img src="{% static 'img/team7.jpg' %}" height="200" width="200"></a>
-	 
-			<h2>Rebecca Lol</h2>
-			<p class="title"> Drum & Percussion </p>
-			 <p class="email">rebeccalol@pinelands.edu.au</p>
-			<p>Rebecca has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-		</div>
-	</div>
-	</div>
-	
-	<div class="column">
-    <div class="card">
-		<div class="container">
-		<a href="{% static 'img/team2.jpg' %}"><img src="{% static 'img/team2.jpg' %}" height="200" width="200"></a>
-	  
-			<h2>Colin Park</h2>
-			<p class="title">Piano & Voice</p>
-			 <p class="email">Colinp@pinelands.edu.au</p>
-			<p>Colin has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
-		</div>
-	</div>
-	</div>
+	<div class="col-md-4 col-md-offset-2" style="width: 16%;">
 
-	<div class="column">
-    <div class="card">
-		<div class="container">
-		  <a href="{% static 'img/team10.jpg' %}"><img src="{% static 'img/team10.jpg' %}" height="200" width="200"></a>
-	 
-			<h2> Peter Quinn</h2>
-			<p class="title">Dancer & Singer</p>
-			 <p class="email">peterquinn@pinelands.edu.au</p>
-			<p>Peter has been working at Virtuosi since early 2017 <br>as a receptionist. 
-			She is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours), 
-			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+      <div class="container-fluid">
+		  <a href="{% static 'img/team3.jpg' %}" data-lightbox="image-3"><img src="{% static 'img/team3.jpg' %}" height="300" width="300"></a>
+	  </div>
+
+  	</div>
+		<div class="col-md-2">
+			<div class="container-fluid">
+				<h2>Milan</h2>
+				<p class="title">Drums & Percussion</p>
+				 <p class="email">milan@pinelands.edu.au</p>
+				<p>Milan has been working at Virtuosi since early 2017 <br>as a receptionist.
+				He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+				majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+			</div>
 		</div>
-	</div>
-	</div>
+
 </div>
+
+<!-- MID -->
+<div class="container-fluid" style="padding: 60px;">
+	<div class="col-md-4 col-md-offset-1" style="width: 16%;">
+
+		<div class="container-fluid">
+		  <a href="{% static 'img/team2.jpg' %}" data-lightbox="image-4"><img src="{% static 'img/team2.jpg' %}" height="300" width="300"></a>
+		</div>
+  	</div>
+
+	<div class="col-md-2">
+		<div class="container-fluid">
+			<h2>John</h2>
+			<p class="title">Woodwind & Brass</p>
+			 <p class="email">john@pinelands.edu.au</p>
+			<p>John has been working at Virtuosi since early 2017 <br>as a receptionist.
+			He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p> <br>
+		</div>
+	</div>
+
+<!-- LHS Top-->
+	<div class="col-md-4 col-md-offset-2" style="width: 16%;">
+
+      <div class="container-fluid">
+		  <a href="{% static 'img/team9.jpg' %}" data-lightbox="image-5"><img src="{% static 'img/team9.jpg' %}" height="300" width="300"></a>
+	  </div>
+
+  	</div>
+		<div class="col-md-2">
+			<div class="container-fluid">
+				<h2>James</h2>
+				<p class="title">Piano</p>
+				 <p class="email">james@pinelands.edu.au</p>
+				<p>James has been working at Virtuosi since early 2017 <br>as a receptionist.
+				He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+				majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+			</div>
+		</div>
+
+</div>
+
+<!-- BOTTOM -->
+<div class="container-fluid" style="padding: 60px;">
+	<div class="col-md-4 col-md-offset-1" style="width: 16%;">
+
+		<div class="container-fluid">
+		  <a href="{% static 'img/team10.jpg' %}" data-lightbox="image-6"><img src="{% static 'img/team10.jpg' %}" height="300" width="300"></a>
+		</div>
+  	</div>
+
+	<div class="col-md-2">
+		<div class="container-fluid">
+			<h2>Aaron</h2>
+			<p class="title">Strings</p>
+			 <p class="email">aaron@pinelands.edu.au</p>
+			<p>Aaron has been working at Virtuosi since early 2017 <br>as a receptionist.
+			He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+			majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p><br>
+		</div>
+	</div>
+
+<!-- LHS Top-->
+	<div class="col-md-4 col-md-offset-2" style="width: 16%;">
+
+      <div class="container-fluid">
+		  <a href="{% static 'img/team11.jpg' %}" data-lightbox="image-7"><img src="{% static 'img/team11.jpg' %}" height="300" width="300"></a>
+	  </div>
+
+  	</div>
+		<div class="col-md-2">
+			<div class="container-fluid">
+				<h2>Harold</h2>
+				<p class="title">Vocal & Ethnic Instruments</p>
+				 <p class="email">harold@pinelands.edu.au</p>
+				<p>Harol has been working at Virtuosi since early 2017 <br>as a receptionist.
+				He is currently in her final year<br> of the Bachelor of Advanced Science <br>(Honours),
+				majoring in Ecology and Genetics,<br> focusing on marine evolutionary biology.</p>
+			</div>
+		</div>
+
+</div>
+
+
 
 </body>
 </html>

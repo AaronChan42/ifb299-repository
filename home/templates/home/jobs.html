@@ -3,25 +3,36 @@
 
 {% block body %}
 
-<div class="container-fluid">
+<div class="container-fluid wow fadeIn" id="job_intro">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <h3>Job Opportunities</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <div class="col-md-4 col-md-offset-2">
+            <h1 style="font-size: 80px;">Job Opportunities</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h4 style="font-family: 'Roboto', sans-serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse tincidunt lectus id sem eleifend, vel auctor orci gravida.
                 Praesent dignissim ex vitae odio dapibus blandit. Sed pharetra magna eget erat varius, ac aliquam enim porttitor. <br> <br>
                 Donec porttitor orci velit, sit amet rutrum mauris facilisis ut. Donec sodales tellus ac orci interdum lobortis. Nunc placerat at odio nec gravida.
                 Pellentesque quis commodo purus. Nunc ornare arcu libero, a vehicula purus feugiat vel.
                 Sed consectetur lectus fringilla convallis venenatis. Duis at mauris nisl. Vestibulum tincidunt erat risus, vitae suscipit arcu scelerisque at.
                 Pellentesque eu volutpat eros, nec hendrerit mi. Donec molestie nibh quis sapien venenatis, et euismod massa porttitor.
-                Integer consequat nunc at tellus iaculis, ac condimentum massa sagittis. Mauris sagittis feugiat maximus. Nulla facilisi.</p>
-            <p>Job applications are to be submitted in-person or through post.</p>
-            <p>Alternatively, you may complete the online job application form below:</p>
+                Integer consequat nunc at tellus iaculis, ac condimentum massa sagittis. Mauris sagittis feugiat maximus. Nulla facilisi.<br><br>
+                Job applications are to be submitted in-person or through post.<br><br>
+                Alternatively, you may complete the online job application form below:</h4>
         </div>
+
     </div>
 
+</div>
+
+<div class="container-fluid wow fadeIn" id="job_form">
+
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-6 col-md-offset-3">
             <form method = post class="post-message" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
@@ -32,7 +43,7 @@
 
 <!-- Send verification it has been uploaded -->
     <div class = row>
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-6 col-md-offset-3">
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }}">{{ message }}</div>
         {% endfor %}
@@ -40,5 +51,6 @@
 
     </div>
 </div>
+
 
 {% endblock %}
