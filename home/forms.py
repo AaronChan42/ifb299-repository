@@ -79,7 +79,7 @@ class JobForm(forms.ModelForm):
             'class': 'form-control'
         }
     ))
-    phoneNumber = forms.CharField(label="Phone Number", widget=forms.TextInput(
+    phoneNumber = forms.CharField(label="Phone Number", validators=[phone_val],widget=forms.TextInput(
         attrs={
             'class': 'form-control'
         }
