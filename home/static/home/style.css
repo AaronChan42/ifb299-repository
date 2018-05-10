@@ -4,9 +4,17 @@
     position: absolute;
     top: 0;
     width: 100%;
-	background-color:  #f6f6f6;}
+	background-color:  #000000;
+	}
 
-/* Change nav colour to #000000 which means have to change color of text to fffff AKA white*/
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -94,7 +102,7 @@ body {
 }
 
 #quote {
-    padding: 60px;
+    padding: 150px;
 }
 
 .carousel-caption {

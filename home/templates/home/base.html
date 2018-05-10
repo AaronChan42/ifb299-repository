@@ -15,7 +15,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{% static 'home/style.css' %}" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!-- Animate CSS-->
 <link rel="stylesheet" href="{% static 'home/animate.css' %}">
 <script src="{% static 'js/wow.min.js' %}"></script>
@@ -27,7 +27,9 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'home:index' %}">Music School</a>
+            <a class="navbar-brand" href="{% url 'home:index' %}">
+                <img src="{% static 'img/pinecone.svg' %}" width="50" height="50" alt="">
+            </a>
         </div>
 
         <!-- Nav Items -->
@@ -36,39 +38,39 @@
             <!--About Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'home:about' %}"> About </a>
+                    <a href="{% url 'home:about' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> about </a>
                 </li>
             </ul>
 
             <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'home:gallery' %}"> Gallery </a>
+                    <a href="{% url 'home:gallery' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> gallery </a>
                 </li>
             </ul>
 
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'home:jobs' %}"> Jobs </a>
+                    <a href="{% url 'home:jobs' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> jobs </a>
                 </li>
             </ul>
 
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'home:team' %}"> Our Team </a>
+                    <a href="{% url 'home:team' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> our team </a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav">
                 <li class="">
-                    <a href="{% url 'home:enrol' %}"> Enrol </a>
+                    <a href="{% url 'home:enrol' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> enrol </a>
                 </li>
             </ul>
 
 
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'home:contact' %}"> Contact Us </a>
+                    <a href="{% url 'home:contact' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> contact us </a>
                 </li>
             </ul>
 
@@ -76,11 +78,22 @@
             <ul class = "nav navbar-nav navbar-right">
                 <li class = ""> <!-- If they go to homepage, while logged in do... -->
                     {% if user.is_authenticated %}
-                        <a href="{% url 'home:logout_user' %}"> Log out </a>
+                        <a href="{% url 'home:logout_user' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Log out </a>
                     {% else %}
-                        <a href="{% url 'home:login' %}"> Login </a>
+                        <a href="{% url 'home:login' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Login </a>
                     {% endif %}
                 </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+
+                    <a href="https://www.instagram.com/" style="color: #fff;"><i class="fab fa-instagram fa-2x"></i></a><
+                </li>
+
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x"></i></a></li>
+
             </ul>
 
         </div>
