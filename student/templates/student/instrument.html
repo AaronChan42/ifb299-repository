@@ -1,30 +1,35 @@
 
 {% extends 'student/base.html' %}
 
-{% block title %}Instrument{% endblock %}
+{% block title %}Instruments{% endblock %}
 
 {% block body %}
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#requestModal">
-  Launch demo modal
+<!--
+Note this page is not actually functional as: WILL DO SIMPLE REQUEST SENT INSTEAD
+  1. We do not have a payment system
+  2. Certain functions e.g. dropdown dependent dropdown require further learning
+-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+  <form method = post class="post-message">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+  </form>
+
+    {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+  </div>
 </button>
-
-
-<!-- Modal -->
-<div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h4>Your instrument hire/purchase request has been sent.</h4> <!-- If form.is_valid (i.e. filled out)-->
-      </div>
-    </div>
   </div>
 </div>
+
+
+
+
 
 {% endblock %}

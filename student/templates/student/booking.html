@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="{% static 'home/style2.css' %}"> <!-- Resource style -->
 
     <body>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+  				<form method = post class="post-message">
+					  {% csrf_token %}
+					  {{ form.as_p }}
+      				<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+  				</form>
+
+    {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+  </div>
+	</div>
+</div>
+
+
+<div class="container-fluid">
   <div class="cd-schedule loading">
   	<div class="timeline">
   		<ul>
@@ -159,6 +178,7 @@
 
   		</ul>
   	</div>
+</div>
 
   	<div class="event-modal">
   		<header class="header">

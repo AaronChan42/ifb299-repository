@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import PermissionDenied
 from .forms import SongForm
@@ -7,9 +8,10 @@ from django.views.generic import ListView
 
 
 # Create your views here.
-def index(request):
+def index(request, user_id):
     if request.user.is_authenticated and request.user.is_staff:
-        return render(request, 'teacher/index.html')
+        user = User.objects.get(pk=user_id)  # get the user_id of who logged in
+        return render(request, 'teacher/index.html', {'user': user})
     else:
         raise PermissionDenied
 
@@ -32,7 +34,7 @@ def delete_music(request, song_id):
     song.delete()
     return render(request, 'teacher/manage_music.html', {"song": song})
 
-#NEED TO ADD PART TO REFRESH TABLE AFTER DELETING
+#NEED TO ADD PART TO REFRESH TABLE AFTER DELETING + ADD USER ID TO GENERIC VIEWS
 
 class DisplayMusic(ListView):
     #To display songs in a table
@@ -42,8 +44,10 @@ class DisplayMusic(ListView):
     def get_queryset(self):
         return Song.objects.all()
 
-def timetable(request):
-    return render(request, 'teacher/timetable.html')
+def timetable(request, user_id):
+    user = User.objects.get(pk=user_id)  # get the user_id of who logged in
+    return render(request, 'teacher/timetable.html', {'user': user})
 
-def manage_lessons(request):
-    return render(request, 'teacher/manage_lessons.html')
+def manage_lessons(request, user_id):
+    user = User.objects.get(pk=user_id)  # get the user_id of who logged in
+    return render(request, 'teacher/manage_lessons.html', {'user': user})

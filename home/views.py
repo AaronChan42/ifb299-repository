@@ -62,7 +62,8 @@ def login_user(request):
             if user.is_active: # Check if active
                 if user.is_staff and not user.is_superuser: #If staff member... redirect to teacher homepage
                     login(request, user)
-                    return redirect('/teacher')
+                    u = request.user
+                    return render(request, 'teacher/index.html', {'u': u})
 
                 elif user.is_superuser: #If admin... redirect to admin page
                     login(request, user)
@@ -70,7 +71,8 @@ def login_user(request):
 
                 else: #If student... redirect to student homepage
                     login(request, user)
-                    return redirect('/student')
+                    u = request.user
+                    return render(request, 'student/index.html', {'u': u}) #WORK IN PROGRESS
         else:
             return render(request, 'home/login.html', {'form': form, 'invalid': True})
 

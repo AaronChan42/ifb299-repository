@@ -2,6 +2,7 @@
 {% block title %}Jobs{% endblock %}
 
 {% block body %}
+{% load staticfiles %}
 
 <div class="container-fluid wow fadeIn" id="job_intro">
     <div class="row">
@@ -21,7 +22,8 @@
                 Sed consectetur lectus fringilla convallis venenatis. Duis at mauris nisl. Vestibulum tincidunt erat risus, vitae suscipit arcu scelerisque at.
                 Pellentesque eu volutpat eros, nec hendrerit mi. Donec molestie nibh quis sapien venenatis, et euismod massa porttitor.
                 Integer consequat nunc at tellus iaculis, ac condimentum massa sagittis. Mauris sagittis feugiat maximus. Nulla facilisi.<br><br>
-                Job applications are to be submitted in-person or through post.<br><br>
+                Job applications are to be submitted in-person or through post. <br><br>
+                <strong>Download the application </strong><a href="{% static 'home/studentC.pdf' %}" target="_blank">here.</a><br><br>
                 Alternatively, you may complete the online job application form below:</h4>
         </div>
 

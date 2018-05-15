@@ -143,7 +143,7 @@
                         {% if user.is_staff %}
                         <li><a href="{% url 'teacher:index' %}">Teacher Home</a></li>
                         {% else %}
-                        <li><a href="{% url 'student:index' %}">Student Home</a></li>
+                        <li><a href="{% url 'student:index' user.id %}">Student Home</a></li>
                         {% endif %}
 
                     {% endif %}

@@ -1,11 +1,11 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Teacher(models.Model):
     GENDERS = (
         ( 'M', 'Male'),
         ('F', 'Female')) # Choices for gender, first entry is what goes into DB, second is what is displayed
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDERS)
@@ -21,6 +21,7 @@ class Student(models.Model):
     ('M', 'Male'),
     ('F', 'Female'))
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDERS)
@@ -49,7 +50,7 @@ class Lesson(models.Model):
     duration = models.IntegerField(choices=DURATIONS)
     students = models.ManyToManyField(Student)# students can have many lessons vice versa
 
-    def __str__(self): # Displays firstName + lastName
+    def __str__(self):
         return self.startDate + ' - ' + self.teacher
 
 class Parent (models.Model):

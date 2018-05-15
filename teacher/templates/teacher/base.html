@@ -17,6 +17,7 @@
 <!-- Animate CSS-->
 <link rel="stylesheet" href="{% static 'home/animate.css' %}">
 <script src="{% static 'js/wow.min.js' %}"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 <!-- Nav Bar -->
 <nav class="navbar navbar-default" id="nav">
@@ -25,7 +26,7 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'teacher:index' %}">Music School</a>
+            <a class="navbar-brand" href="{% url 'teacher:index' user.id %}">Music School</a>
         </div>
 
         <!-- Nav Items -->
@@ -34,32 +35,32 @@
             <!--About Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'teacher:manage_music' %}"> Manage Music </a>
+                    <a href="{% url 'teacher:manage_music' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Manage Music </a>
                 </li>
             </ul>
 
             <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'teacher:timetable' %}"> Timetable </a>
+                    <a href="{% url 'teacher:timetable' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Timetable </a>
                 </li>
             </ul>
 
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'teacher:manage_lessons' %}"> Manage Lessons </a>
+                    <a href="{% url 'teacher:manage_lessons' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Manage Lessons </a>
                 </li>
             </ul>
             
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'admin:index' %}"> Admin </a>
+                    <a href="{% url 'admin:index' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Admin </a>
                 </li>
             </ul>
 
             <ul class = "nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="{% url 'home:logout_user' %}">Log out</a>
+                    <a href="{% url 'home:logout_user' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;">Log out</a>
                 </li>
             </ul>
 
@@ -78,11 +79,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-sm-2">
-
-            </div>
-
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-sm-offset-4">
                 <h4>Contact Us</h4>
                 <p>Music School
                 <br>1 George St
@@ -91,11 +88,6 @@
                 <h6>Copyright &copy; 2018</h6>
             </div>
 
-            <div class="col-sm-2">
-                <h4>About Us</h4>
-                <p>Music is our passion. We believe x, y, z.
-                <br> Founded in 2000</p>
-            </div>
 
             <div class="col-sm-2">
                 <h4>Navigation</h4>
@@ -105,15 +97,10 @@
                     <li><a href="{% url 'home:jobs' %}">Jobs</a></li>
                     <li><a href="{% url 'home:team' %}">Our Team</a></li>
                     <li><a href="{% url 'home:contact' %}">Contact Us</a></li>
-                    <li><a href="{% url 'teacher:index' %}">Teacher Home</a></li>
+                    <li><a href="{% url 'teacher:index' user.id %}">Teacher Home</a></li>
                 </ul>
             </div>
 
-            <div class="col-sm-2">
-                <h4>Follow Us</h4>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-            </div>
 
             </div>
 

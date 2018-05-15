@@ -17,6 +17,7 @@
 <!-- Animate CSS-->
 <link rel="stylesheet" href="{% static 'home/animate.css' %}">
 <script src="{% static 'js/wow.min.js' %}"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 <!-- Nav Bar -->
 <nav class="navbar navbar-default" id="nav">
@@ -25,7 +26,7 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'student:index' %}">Music School</a>
+            <a class="navbar-brand" href="{% url 'student:index' user.id %}">Music School</a>
         </div>
 
         <!-- Nav Items -->
@@ -34,35 +35,35 @@
             <!--About Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'student:feedback' %}"> Feedback </a>
+                    <a href="{% url 'student:feedback' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Feedback </a>
                 </li>
             </ul>
 
             <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'student:instrument' %}"> Instruments </a>
+                    <a href="{% url 'student:instrument' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Instruments </a>
                 </li>
             </ul>
 
             <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'student:my_music' %}"> My Music </a>
+                    <a href="{% url 'student:my_music' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> My Music </a>
                 </li>
             </ul>
 
              <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'student:booking' %}"> Book Lessons </a>
+                    <a href="{% url 'student:booking' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Book Lessons </a>
                 </li>
             </ul>
 
 
             <ul class = "nav navbar-nav navbar-right">
                 <li class="">
-                        <a href="{% url 'home:logout_user' %}">Log out</a>
+                        <a href="{% url 'home:logout_user' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;">Log out</a>
                 </li>
             </ul>
 
@@ -105,7 +106,7 @@
                     <li><a href="{% url 'home:jobs' %}">Jobs</a></li>
                     <li><a href="{% url 'home:team' %}">Our Team</a></li>
                     <li><a href="{% url 'home:contact' %}">Contact Us</a></li>
-                    <li><a href="{% url 'student:index' %}">Student Home</a></li>
+                    <li><a href="{% url 'student:index' user.id %}">Student Home</a></li>
                 </ul>
             </div>
 
