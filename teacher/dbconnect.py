@@ -4,8 +4,8 @@ config = {
 'port':3306,
 'user':'root',
 'password':'',
-'db':'musicschool',
-'charset':'utf8mb4',
+#'db':'musicschool',
+#'charset':'utf8mb4',
 'cursorclass':pymysql.cursors.DictCursor,
 }
 
