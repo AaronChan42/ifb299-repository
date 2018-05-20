@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import PermissionDenied
 from .forms import SongForm
-from .models import Song
+from .models import Song, Lesson
 from django.contrib import messages
 from django.views.generic import ListView
 
@@ -10,7 +10,7 @@ from django.views.generic import ListView
 # Create your views here.
 def index(request, user_id):
     if request.user.is_authenticated and request.user.is_staff:
-        user = User.objects.get(pk=user_id)  # get the user_id of who logged in
+        user = User.objects.get(pk=user_id)  # get the user object of who logged in
         return render(request, 'teacher/index.html', {'user': user})
     else:
         raise PermissionDenied
@@ -50,4 +50,5 @@ def timetable(request, user_id):
 
 def manage_lessons(request, user_id):
     user = User.objects.get(pk=user_id)  # get the user_id of who logged in
-    return render(request, 'teacher/manage_lessons.html', {'user': user})
+    lessons = Lesson.objects.all()
+    return render(request, 'teacher/manage_lessons.html', {'user': user, 'lessons': lessons})

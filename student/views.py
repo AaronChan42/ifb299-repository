@@ -4,19 +4,20 @@ from teacher.models import Song
 from django.views.generic import ListView
 from .forms import InstrumentForm, FeedbackForm, BookingForm
 from django.contrib import messages
+from .models import Lesson, Student
 from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request, user_id):
     if request.user.is_authenticated and not request.user.is_staff:
         user = User.objects.get(pk=user_id) #get the user_id of who logged in
-        return render(request, 'student/index.html', {'user': user})
+        lessons = Lesson.objects.all()
+        return render(request, 'student/index.html', {'user': user, 'lessons': lessons})
     else:
         raise PermissionDenied
 
-def instrument(request, user_id):
+def instrument(request):
     form = InstrumentForm()
-    user = User.objects.get(pk=user_id)  # get the user_id of who logged in
 
     if request.method == "POST":
         form = InstrumentForm(request.POST or None)
@@ -24,15 +25,14 @@ def instrument(request, user_id):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            messages.success(request, 'Your request has been sent! Please wait for admin to process your request. You will be notified via email')
+            messages.success(request, 'Your request has been sent! Please wait for admin to process your request. You will be notified via email.')
             return redirect('student:instrument')
 
-    return render(request, 'student/instrument.html', {'form': form, 'user': user})
+    return render(request, 'student/instrument.html', {'form': form})
 
 
-def feedback(request, user_id):
+def feedback(request):
     form = FeedbackForm()
-    user = User.objects.get(pk=user_id)  # get the user_id of who logged in
 
     if request.method == "POST":
         form = FeedbackForm(request.POST or None)
@@ -43,11 +43,10 @@ def feedback(request, user_id):
             messages.success(request, 'Your Message has been Sent!')
             return redirect('student:feedback')
 
-    return render(request, 'student/feedback.html', {'form': form, 'user': user})
+    return render(request, 'student/feedback.html', {'form': form})
 
-def booking(request, user_id):
+def booking(request):
     form = BookingForm()
-    user = User.objects.get(pk=user_id)  # get the user_id of who logged in
 
     if request.method == "POST":
         form = BookingForm(request.POST or None)
@@ -55,10 +54,10 @@ def booking(request, user_id):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            messages.success(request, 'Your request has been sent! Please wait for admin to process your request. You will be notified via email')
-            return redirect('student:feedback')
+            messages.success(request, 'Your request has been sent! Please wait for admin to process your request. You will be notified via email.')
+            return redirect('student:booking')
 
-    return render(request, 'student/booking.html', {'form': form, 'user': user})
+    return render(request, 'student/booking.html', {'form': form})
 
 class DisplayMusic(ListView):
     #To display songs

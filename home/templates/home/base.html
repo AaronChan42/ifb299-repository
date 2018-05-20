@@ -74,6 +74,7 @@
                 </li>
             </ul>
 
+
             <!--Login Button (RHS) -->
             <ul class = "nav navbar-nav navbar-right">
                 <li class = ""> <!-- If they go to homepage, while logged in do... -->
@@ -86,14 +87,9 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="">
-
-                    <a href="https://www.instagram.com/" style="color: #fff;"><i class="fab fa-instagram fa-2x"></i></a><
-                </li>
-
+                <li class=""><a href="https://www.instagram.com/" style="color: #fff;"><i class="fab fa-instagram fa-2x"></i></a></li>
                 <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square fa-2x"></i></a></li>
                 <li><a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x"></i></a></li>
-
             </ul>
 
         </div>
@@ -141,7 +137,7 @@
                     {% if user.is_authenticated %}
 
                         {% if user.is_staff %}
-                        <li><a href="{% url 'teacher:index' %}">Teacher Home</a></li>
+                        <li><a href="{% url 'teacher:index' user.id %}">Teacher Home</a></li>
                         {% else %}
                         <li><a href="{% url 'student:index' user.id %}">Student Home</a></li>
                         {% endif %}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Instrument, Feedback, Teacher, InstrumentRequest, BookingRequest, Lesson, Student
+from .models import Instrument, Feedback, Teacher, InstrumentRequest, BookingRequest, Lesson, TeacherLanguage
 
 
 class InstrumentForm(forms.ModelForm):
@@ -8,7 +8,9 @@ class InstrumentForm(forms.ModelForm):
         ('Buy', 'Buy')
     }
 
-    student = forms.CharField(widget=forms.HiddenInput()) #DO THIS TOMORROW -hidden input field with value
+    user = forms.CharField(label="Username", widget=forms.TextInput(attrs={
+        'class': 'form-control'
+    }))
 
     instrument = forms.ModelChoiceField(label="Instrument", queryset=Instrument.objects.all(), widget=forms.Select(attrs={
         'class': 'form-control'
@@ -20,7 +22,7 @@ class InstrumentForm(forms.ModelForm):
 
     class Meta:
         model = InstrumentRequest
-        fields = ('instrument', 'hire', 'student')
+        fields = ('user', 'instrument', 'hire' )
 
 class FeedbackForm(forms.ModelForm):
     teacher = forms.ModelChoiceField(label = "Teacher", queryset=Teacher.objects.all(), widget=forms.Select(attrs={
@@ -37,13 +39,19 @@ class FeedbackForm(forms.ModelForm):
         fields = ('teacher', 'studentFeedback')
 
 class BookingForm(forms.ModelForm):
-    student = forms.CharField(widget=forms.TextInput(attrs={
+    user = forms.CharField(label="Username", widget=forms.TextInput(attrs={
         'class': 'form-control'
-    }))  # DO THIS TOMORROW
+    }))
 
     lesson = forms.ModelChoiceField(label="Lesson", queryset=Lesson.objects.all(), widget=forms.Select(attrs={
         'class': 'form-control'
     }))
+
+    prefLang = forms.ModelChoiceField(label="Preferred Language (optional)",initial=0, queryset=TeacherLanguage.objects.all(),
+                                      widget=forms.Select(attrs={
+                                          'class': 'form-control'
+                                      }))
+
     class Meta:
         model = BookingRequest
-        fields = ('student', 'lesson')
+        fields = ('user', 'lesson', 'prefLang')

@@ -3,6 +3,51 @@
 {% block title %}Manage Lessons{% endblock %}
 
 {% block body %}
-<h1>Manage Lessons</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 style="font-size: 80px;">Manage Lessons</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
 
+
+    <!--
+    Display lessons in table
+    No adding updating lessons
+    -->
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table table-hover">
+            <!-- Header -->
+                <thead>
+                    <tr>
+                        <th scope="col">Lesson ID</th>
+                        <th scope="col">Teacher</th>
+                      <th scope="col">Day & Time</th>
+                      <th scope="col">Duration (minutes)</th>
+                      <th scope="col">Students</th>
+                    </tr>
+                </thead>
+
+
+        <tbody>
+        {% for lesson in lessons %}
+        <tr>
+            <td>{{ lesson.id }}</td>
+            <td>{{ lesson.teacher }}</td>
+            <td>{{ lesson.day }} - {{ lesson.time }}</td>
+            <td>{{ lesson.duration }} </td>
+            <td>{{ lesson.students.all|join:", " }}</td> <!-- special case as it is M-2-M -->
+        </tr>
+        {% endfor %}
+        </tbody>
+
+                </table>
+        </div>
+    </div>
+
+</div>
 {% endblock %}

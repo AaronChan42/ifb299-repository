@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from home.models import *
 
 # Create your models here.
@@ -32,13 +33,13 @@ class InstrumentRequest(models.Model): #for now
         ('A', 'Approved')
     }
 
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    user = models.CharField(max_length=40)
     instrument = models.ForeignKey(Instrument, on_delete=models.CASCADE)
     hire = models.CharField(max_length=4, choices=CONDITIONS)
     approval = models.CharField(max_length=8, choices=APPROVAL, default='P')
 
     def __str__(self):
-        return str(self.student) + ' ' + str(self.instrument) + ' REQUEST ' + self.approval
+        return str(self.user) + ' ' + str(self.instrument) + ' REQUEST ' + self.approval
 
 class Feedback(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
@@ -53,9 +54,10 @@ class BookingRequest(models.Model):
         ('A', 'Approved')
     }
 
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    user = models.CharField(max_length=40)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    prefLang = models.CharField(max_length=40)
     approval = models.CharField(max_length=8, choices=APPROVAL, default='P')
 
     def __str__(self):
-        return str(self.student) + ' ' + str(self.lesson) + ' REQUEST ' + self.approval
+        return str(self.user) + ' ' + str(self.lesson) + ' REQUEST ' + self.approval

@@ -3,6 +3,15 @@
 {% block title %}Teacher Home{% endblock %}
 
 {% block body %}
-<h1>Teacher Home</h1>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 style="font-size: 80px;">Welcome back {{ user.get_username }},</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

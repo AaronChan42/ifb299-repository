@@ -44,14 +44,22 @@ class Lesson(models.Model):
         (DURATION_2, "60min")
     )
 
+    DAYS = (
+        ('MON', 'Monday'),
+        ('TUE', 'Tuesday'),
+        ('WED', 'Wednesday'),
+        ('THU', 'Thursday'),
+        ('FRI', 'Friday'),
+    )
+
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    startDate = models.DateField()
-    endDate = models.DateField()
+    day = models.CharField(choices=DAYS, max_length=3, null=True, blank=True)
+    time = models.TimeField(null=True, blank=True)
     duration = models.IntegerField(choices=DURATIONS)
-    students = models.ManyToManyField(Student)# students can have many lessons vice versa
+    students = models.ManyToManyField(Student, null=True, blank=True)# students can have many lessons vice versa
 
     def __str__(self):
-        return self.startDate + ' - ' + self.teacher
+        return str(self.id) + ' ' + str(self.day) + ' - ' + str(self.time)
 
 class Parent (models.Model):
     firstName = models.CharField(max_length=30)
@@ -81,7 +89,7 @@ class TeacherLanguage (models.Model): #Display Teacher ID, language spoken
     languageSpoken = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.teacher + ' - ' + self.languageSpoken
+        return self.languageSpoken
 
 class TeacherPhone (models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
