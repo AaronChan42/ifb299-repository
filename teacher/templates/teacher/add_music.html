@@ -3,18 +3,32 @@
 {% block title %}Add Music{% endblock %}
 
 {% block body %}
-<h1>Manage Music</h1>
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 style="font-size: 80px;">Add Music</h1>
+                <hr>
+            </div>
+        </div>
+    </div>
 
-<form method = post class="post-message" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary btn-lg">Add Song</button>
-</form>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form method = post class="post-message" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary btn-lg">Add Song</button>
+                <br><br>
+            </form>
 
 <!-- Send verification it has been uploaded -->
 {% for message in messages %}
     <div class="alert alert-{{ message.tags }}">{{ message }}</div>
 {% endfor %}
+        </div>
+    </div>
 
+</div>
 
 {% endblock %}

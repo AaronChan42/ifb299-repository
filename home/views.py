@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import PostMessage, UserForm, JobForm
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
+from .models import Lesson
 
 # Create your views here.
 def index(request):
@@ -71,8 +72,9 @@ def login_user(request):
 
                 else: #If student... redirect to student homepage
                     login(request, user)
+                    lessons = Lesson.objects.all()
                     u = request.user
-                    return render(request, 'student/index.html', {'u': u}) #WORK IN PROGRESS
+                    return render(request, 'student/index.html', {'u': u, 'lessons':lessons}) #WORK IN PROGRESS
         else:
             return render(request, 'home/login.html', {'form': form, 'invalid': True})
 

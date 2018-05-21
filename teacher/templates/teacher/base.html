@@ -26,7 +26,9 @@
 
         <!--Logo-->
         <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'teacher:index' user.id %}">Music School</a>
+            <a class="navbar-brand" href="{% url 'teacher:index' user.id %}">
+                <img src="{% static 'img/pinecone.svg' %}" width="50" height="50" alt="">
+            </a>
         </div>
 
         <!-- Nav Items -->

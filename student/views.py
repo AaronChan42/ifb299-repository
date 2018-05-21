@@ -4,7 +4,7 @@ from teacher.models import Song
 from django.views.generic import ListView
 from .forms import InstrumentForm, FeedbackForm, BookingForm
 from django.contrib import messages
-from .models import Lesson, Student
+from .models import Lesson
 from django.contrib.auth.models import User
 
 # Create your views here.

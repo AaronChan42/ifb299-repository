@@ -2,7 +2,8 @@
 from django import forms
 from .models import Message, Applicant
 from django.contrib.auth.models import User
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, FileExtensionValidator
+
 
 #Phone Number Validator
 phone_val = RegexValidator(regex=r'^\({0,1}((0|\+61)(2|4|3|7|8)){0,1}\){0,1}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{2}(\ |-){0,1}[0-9]{1}(\ |-){0,1}[0-9]{3}$'
@@ -85,11 +86,11 @@ class JobForm(forms.ModelForm):
         }
     ))
 
-    contract = forms.FileField(label="Signed Contract", widget=forms.FileInput(attrs={
+    contract = forms.FileField(label="Signed Contract", validators=[FileExtensionValidator(['doc', 'docx', 'pdf'])], widget=forms.FileInput(attrs={
         'class': 'form-control-file'
     }))
 
-    resume = forms.FileField(label="Resume/CV", widget=forms.FileInput(attrs={
+    resume = forms.FileField(label="Resume/CV", validators=[FileExtensionValidator(['doc', 'docx', 'pdf'])], widget=forms.FileInput(attrs={
         'class': 'form-control-file'
     }))
 
