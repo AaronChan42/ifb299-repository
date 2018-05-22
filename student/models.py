@@ -12,7 +12,7 @@ class Instrument(models.Model):
         ('D', 'Discard')
     )
 
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, null=True, blank=True) #Instruments don't have to be assigned to a student
     instrument_name = models.CharField(max_length=50)
     costofHire = models.IntegerField()
     purchaseCost = models.IntegerField()

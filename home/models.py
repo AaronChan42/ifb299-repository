@@ -56,7 +56,7 @@ class Lesson(models.Model):
     day = models.CharField(choices=DAYS, max_length=3, null=True, blank=True)
     time = models.TimeField(null=True, blank=True)
     duration = models.IntegerField(choices=DURATIONS)
-    students = models.ManyToManyField(Student, null=True, blank=True)# students can have many lessons vice versa
+    students = models.ManyToManyField(Student)# students can have many lessons vice versa
 
     def __str__(self):
         return str(self.id) + ' ' + str(self.day) + ' - ' + str(self.time)
