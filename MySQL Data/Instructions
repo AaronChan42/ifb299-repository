@@ -1,0 +1,8 @@
+To import dump file (.sql):
+
+  In Workbench:
+    1) Access Local Instance (login)
+    2) In RHS 'Navigator' select 'Data Import/Restore'
+    3) Import from Self-Contained File
+          Choose school.sql
+    
