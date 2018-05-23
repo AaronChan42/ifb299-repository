@@ -52,6 +52,13 @@ class Lesson(models.Model):
         ('FRI', 'Friday'),
     )
 
+    TYPES = (
+        ('Piano lesson', 'Piano lesson'),
+        ('Drum lesson', 'Drum lesson'),
+        ('Guitar lesson', 'Guitar lesson'),
+    )
+
+    type = models.CharField(choices=TYPES, max_length=50, null=True, blank=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     day = models.CharField(choices=DAYS, max_length=3, null=True, blank=True)
     time = models.TimeField(null=True, blank=True)
