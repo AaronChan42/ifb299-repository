@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+
+{% block branding %}
+<h1>Pinelands Admin</h1>
+{% endblock %}
+
+{% block userlinks %}
+
+<!-- This is to override django/admin logout redirect
+    Instead, it will redirect to Logout page then Homepage
+-->
+
+ <a href="{% url 'home:logout_user' %}"> Log out </a>
+
+{% endblock %}
