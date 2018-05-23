@@ -1,8 +1,29 @@
+Prerequisites:
+  1) Installed MySQL Community Server
+    Download and install from their website
+  
+  1) Installed MySQL Workbench
+    Download and install from their website
+  
+  1) Installed mysqlclient
+    type in CMD or powershell "pip install mysqlclient"
+
+
 To import dump file (.sql):
 
   In Workbench:
-    1) Access Local Instance (login)
-    2) In RHS 'Navigator' select 'Data Import/Restore'
+    1) Access Local Instance (login to MySQL)
+    
+    2) In LHS 'Navigator' select 'Data Import/Restore'
+    
     3) Import from Self-Contained File
           Choose school.sql
+          
+    4) Choose 'New' for default target schema and name 'school' if not already created otherwise choose 'school' schema
+    
+    5) Press 'Start Import' at bottom right corner
+    
+    6) Press Refresh symbol on the right of SCHEMAS under Navigator
+    
+    7) Schema should be there
     
