@@ -41,22 +41,15 @@
                 </li>
             </ul>
 
-            <!--Another Item -->
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'teacher:timetable' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Timetable </a>
-                </li>
-            </ul>
-
-            <ul class = "nav navbar-nav">
-                <li class = "">
-                    <a href="{% url 'teacher:manage_lessons' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Manage Lessons </a>
+                    <a href="{% url 'teacher:manage_lessons' user.id %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Timetable </a>
                 </li>
             </ul>
             
             <ul class = "nav navbar-nav">
                 <li class = "">
-                    <a href="{% url 'admin:index' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Admin </a>
+                    <a href="{% url 'admin:index' %}" style="font-family: 'Roboto'; font-weight: 500; font-size: 20px;"> Manage Lesson </a>
                 </li>
             </ul>
 

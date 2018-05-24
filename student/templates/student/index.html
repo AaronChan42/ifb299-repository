@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="text-center">
-                <h1 style="font-size: 80px;">Welcome back {{ user.get_username }},</h1>
+                <h1 style="font-size: 80px;">Welcome back {{ user.get_username }}</h1>
                 <hr>
             </div>
         </div>
@@ -24,16 +24,17 @@
         </div>
 
 
-     <div class="row">
+      <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <table class="table table-hover">
             <!-- Header -->
                 <thead>
                     <tr>
-                        <th scope="col">Lesson No.</th>
+                        <th scope="col">Lesson Type</th>
                         <th scope="col">Teacher</th>
-                      <th scope="col">Day & Time</th>
-                      <th scope="col">Duration (minutes)</th>
+                        <th scope="col">Room</th>
+                        <th scope="col">Day & Time</th>
+                        <th scope="col">Duration (minutes)</th>
                     </tr>
                 </thead>
 
@@ -41,18 +42,18 @@
         <tbody>
         {% for lesson in lessons %}
         <tr>
-            <td>{{ forloop.counter }}</td>
+            <td>{{ lesson.type }}</td>
             <td>{{ lesson.teacher }}</td>
+            <td>{{ lesson.room }}</td>
             <td>{{ lesson.day }} - {{ lesson.time }}</td>
             <td>{{ lesson.duration }} </td>
         </tr>
         {% endfor %}
         </tbody>
 
-            </table>
+                </table>
         </div>
     </div>
-
 
 
     </div>

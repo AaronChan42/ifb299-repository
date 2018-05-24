@@ -24,7 +24,6 @@
             <!-- Header -->
                 <thead>
                     <tr>
-                        <th scope="col">Lesson ID</th>
                         <th scope="col">Lesson Type</th>
                         <th scope="col">Teacher</th>
                       <th scope="col">Day & Time</th>
@@ -37,7 +36,6 @@
         <tbody>
         {% for lesson in lessons %}
         <tr>
-            <td>{{ lesson.id }}</td>
             <td>{{ lesson.type }}</td>
             <td>{{ lesson.teacher }}</td>
             <td>{{ lesson.day }} - {{ lesson.time }}</td>

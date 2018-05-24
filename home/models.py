@@ -25,7 +25,6 @@ class Student(models.Model):
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=30)
     gender = models.CharField(max_length=1, choices=GENDERS)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     DoB = models.DateField()
     address = models.TextField()
     facebookID = models.IntegerField()
@@ -58,15 +57,50 @@ class Lesson(models.Model):
         ('Guitar lesson', 'Guitar lesson'),
     )
 
+    ROOMS =(
+        ('Room 101', 'Room 101'),
+        ('Room 102', 'Room 102'),
+        ('Room 103', 'Room 103'),
+    )
+
+    TIMES = (
+        ('8:00', '8:00'),
+        ('8:30', '8:30'),
+        ('9:00', '9:00'),
+        ('9:30', '9:30'),
+        ('10:00', '10:00'),
+        ('10:30', '10:30'),
+        ('11:00', '11:00'),
+        ('11:30', '11:30'),
+        ('12:00', '12:00'),
+        ('12:30', '12:30'),
+        ('13:00', '13:00'),
+        ('13:30', '13:30'),
+        ('14:00', '14:00'),
+        ('14:30', '14:30'),
+        ('15:00', '15:00'),
+        ('15:30', '15:30'),
+        ('16:00', '16:00'),
+        ('16:30', '16:30'),
+        ('17:00', '17:00'),
+        ('17:30', '17:30'),
+        ('18:00', '18:00'),
+        ('18:30', '18:30'),
+        ('19:00', '19:00'),
+        ('19:30', '19:30'),
+        ('20:00', '20:00'),
+    )
+
     type = models.CharField(choices=TYPES, max_length=50, null=True, blank=True)
+    room = models.CharField(choices=ROOMS, max_length=50, null=True, blank=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     day = models.CharField(choices=DAYS, max_length=3, null=True, blank=True)
-    time = models.TimeField(null=True, blank=True)
+    time = models.CharField(choices=TIMES, max_length=50, null=True, blank=True)
     duration = models.IntegerField(choices=DURATIONS)
     students = models.ManyToManyField(Student)# students can have many lessons vice versa
 
     def __str__(self):
-        return str(self.id) + ' ' + str(self.day) + ' - ' + str(self.time)
+        return  self.type + ' ' + str(self.day) + ' - ' + str(self.time)
 
 class Parent (models.Model):
     firstName = models.CharField(max_length=30)
