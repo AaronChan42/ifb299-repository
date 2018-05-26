@@ -1,5 +1,5 @@
 Prerequisites:
-  1) Installed MySQL Community Server
+  1) Installed MySQL Community Server 8.0 ** IMPORTANT **
     Download and install from their website
   
   1) Installed MySQL Workbench
