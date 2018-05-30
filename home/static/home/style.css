@@ -77,7 +77,7 @@ body {
 }
 
 .gallery img:hover{
-	transform: scale(3.3);
+	transform: scale(2.2);
 }
 #loginPG {
     background-color: #f5f5f5;
